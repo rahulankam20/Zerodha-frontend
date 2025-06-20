@@ -15,7 +15,7 @@ function Signin() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const res = await fetch('http://localhost:3002/api/auth/signin', {
+          const res = await fetch('https://zerodha-backend-viyu.onrender.com/api/auth/signin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form),
@@ -25,7 +25,7 @@ function Signin() {
     
           if (res.ok) {
             localStorage.setItem('token', data.token);
-            window.location.href = 'http://localhost:3001'; // Redirect to dashboard
+            window.location.href = 'https://zerodha-dashboard-mauve.vercel.app'; // Redirect to dashboard
           } else {
             alert(data.message);
           }
